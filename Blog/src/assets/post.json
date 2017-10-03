@@ -1,0 +1,43 @@
+{
+  "postsData":[
+    {
+      "id": 1,
+      "title": "PUMA speedX",
+      "about": "RunWithPUMA",
+      "author" :"Gokul",
+      "p1" :"Hello1",
+      "p2" :"HEllo2",
+      "p3" :"HEllo3",
+      "p4" :"HEllo4",
+      "p5" :"HEllo5",
+      "p6" :"HEllo6",
+      "p7" :"HEllo7",
+      "quote":"HEllo8",
+      "p8" :"HEllo9",
+      "p9" :"HEllo10",
+      "img":"/img/post-sample-image.jpg",
+      "p10" :"HEllo11",
+      "p11" :"HEllo12"
+
+    },{
+      "id": 2,
+      "title": "PUMA speedX1",
+      "about": "RunWithPUMA1",
+      "author" :"Gokul1",
+      "p1" :"Hello1",
+      "p2" :"HEllo2",
+      "p3" :"HEllo3",
+      "p4" :"HEllo4",
+      "p5" :"HEllo5",
+      "p6" :"HEllo6",
+      "p7" :"HEllo7",
+      "quote":"HEllo8",
+      "p8" :"HEllo9",
+      "p9" :"HEllo10",
+      "img":"/img/post-sample-image.jpg",
+      "p10" :"HEllo11",
+      "p11" :"HEllo12"
+
+    }
+  ]
+}
