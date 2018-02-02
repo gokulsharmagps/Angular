@@ -1,10 +1,10 @@
-
-<section>
+<hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+ <router-outlet name='post'>
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-preview">
-        <a [routerLink]="['/posts/' , post.id]" >
+        <a [routerLink]="['/posts/' , post.id]" onclick="traverse()">
           <h2 class="post-title">
           {{post.title}}
           </h2>
@@ -14,9 +14,9 @@
         <p class="post-meta">Posted by
           <a [routerLink]="['/posts/', post.id]">{{post.author}}</a>
           on September 24, 2017</p>
-          <hr>
+          <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
       </div>
     </div>
   </div>
 </div>
-</section>
+</router-outlet>

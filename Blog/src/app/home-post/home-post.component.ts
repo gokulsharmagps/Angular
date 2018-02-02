@@ -16,4 +16,10 @@ export class HomePostComponent implements OnInit {
   ngOnInit() {
   }
 
+
+    //
+    // traverse(){
+    // this.postDetailComponent.showContent(this.post);
+    // }
+
 }

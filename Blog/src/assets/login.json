@@ -1,0 +1,10 @@
+{
+  "loginData":[
+    {
+      "username" :"gokul",
+      "password":"123456",
+      "state" : false
+
+    }
+  ]
+}

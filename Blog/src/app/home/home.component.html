@@ -20,6 +20,12 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/contact']">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/dropbox']" *ngIf="state">DropBox</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/login']">Login</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -43,10 +49,10 @@
         </header>
 
         <!-- Main Content -->
-<home-post *ngFor="let post of posts" [post]="post"></home-post>       
+<home-post *ngFor="let post of posts" [post]="post"></home-post>
 
 <!-- footer -->
-
+<button onclick="alert()"></button>
     <footer>
       <div class="container">
         <div class="row">

@@ -3,11 +3,11 @@ import { Login } from '../log-in/login';
 import { LoginService } from '../log-in/login.service';
 
 @Component({
-  selector: 'contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  selector: 'app-drop-box',
+  templateUrl: './drop-box.component.html',
+  styleUrls: ['./drop-box.component.css']
 })
-export class ContactComponent  {
+export class DropBoxComponent{
 logins: Login[];
 state :boolean = false;
 
@@ -17,7 +17,7 @@ state :boolean = false;
   ngOnInit() {
     this.loginService.getLogins()
         .subscribe(data => this.logins = data);
-        //this.check();
+        // this.check();
     }
 
     check(){

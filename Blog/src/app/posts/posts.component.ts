@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Post } from './post';
 import { PostService } from './post.service';
+import { Login } from '../log-in/login';
+import { LoginService } from '../log-in/login.service';
 
 @Component({
   selector: 'posts',
@@ -9,15 +11,31 @@ import { PostService } from './post.service';
 })
 
 export class PostsComponent {
-
   posts: Post[];
+  logins: Login[];
+  state :boolean = false;
 
-  constructor(private postService: PostService) { }
+  constructor(private postService:PostService,private loginService: LoginService) {
+   }
 
-  ngOnInit() {
+    ngOnInit() {
     this.postService.getPosts()
-        .subscribe(data => this.posts = data);
-  }
+        .subscribe(posts => this.posts = posts);
+        this.loginService.getLogins()
+            .subscribe(data => this.logins = data);
+          //  this.check();
+    }
+
+    check(){
+      for(let login of this.logins){
+        if(login.state=true){
+          this.state=true;
+        }
+        else {
+          this.state=false;
+        }
+      }
+    }
 
 
 }

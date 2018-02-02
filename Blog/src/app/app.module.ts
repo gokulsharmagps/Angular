@@ -13,6 +13,9 @@ import { PostComponent } from './post/post.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PostService } from './posts/post.service';
 import { HomePostComponent } from './home-post/home-post.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { DropBoxComponent } from './drop-box/drop-box.component';
+import { LoginService } from './log-in/login.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { HomePostComponent } from './home-post/home-post.component';
 
     PostComponent,
     PostDetailComponent,
-    HomePostComponent
+    HomePostComponent,
+    LogInComponent,
+    DropBoxComponent
 
   ],
   imports: [
@@ -34,13 +39,17 @@ import { HomePostComponent } from './home-post/home-post.component';
     RouterModule.forRoot([
     {path:'',redirectTo:'home',pathMatch :'full'},
     {path :'home', component:HomeComponent},
+    {path :'home', outlet:'home-post', component:HomePostComponent},
     {path : 'posts', component: PostsComponent},
+    {path : 'posts', outlet:'post', component: PostComponent},
     {path :'contact', component:ContactComponent},
     {path : 'about', component: AboutComponent},
+    {path :'dropbox', component:DropBoxComponent},
+    {path : 'login', component: LogInComponent},
     {path :'posts/:id' ,component :PostDetailComponent}
     ])
   ],
-  providers: [PostService],
+  providers: [PostService,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

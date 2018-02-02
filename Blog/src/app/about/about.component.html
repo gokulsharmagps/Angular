@@ -19,6 +19,12 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/contact']">Contact</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/dropbox']" *ngIf="state">DropBox</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/login']">Login</a>
+        </li>
       </ul>
     </div>
   </div>
