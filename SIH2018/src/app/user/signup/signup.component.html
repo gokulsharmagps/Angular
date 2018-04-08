@@ -1,0 +1,157 @@
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+<!-- Custom styles for this template -->
+<link href="css/landing-page.min.css" rel="stylesheet">
+
+<!-- <div *ngIf="loggedout"> -->
+<body class="bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/']">Government of Chattisgarh</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/faq']">faq</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/rules']">rules</a>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Login
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="nav-link dropdown-item" [routerLink]="['/login']">Citizen Login</a>
+          <a class="nav-link dropdown-item" [routerLink]="['/adminlogin']">Admin Login</a>
+        </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<header class="masthead text-white text-center">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h1 class="mb-5">Now Pay Your Challans Online</h1>
+
+
+
+
+
+  <div class="card card-register mx-auto mt-5">
+    <div class="card-header" style="color :gray">Register an Account</div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="exampleInputName">First name</label>
+              <input class="form-control" id="exampleInputName" type="text" aria-describedby="nameHelp" placeholder="Enter first name" [(ngModel)]="citizen.first_name" name="firstname">
+            </div>
+            <div class="col-md-6">
+              <label for="exampleInputLastName">Last name</label>
+              <input class="form-control" id="exampleInputLastName" type="text" aria-describedby="nameHelp" placeholder="Enter last name" [(ngModel)]="citizen.last_name" name="lastname">
+            </div>
+              <div class="col-md-6">
+              <label for="exampleInputNumber">Phone number</label>
+              <input class="form-control" id="exampleInputNumber" type="integer" aria-describedby="emailHelp" placeholder="Enter phone number" [(ngModel)]="citizen.mobile" name="mobile">
+            </div>
+
+              <div class="col-md-6">
+              <label for="exampleInputNumber">Aadhar number</label>
+              <input class="form-control" id="exampleInputaadharNumber" type="integer" aria-describedby="emailHelp" placeholder="Enter Aadhar number" [(ngModel)]="citizen.aadhar_no" name="aadhar_no">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input class="form-control" id="exampleInputEmail1" type="email" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="citizen.email" name="email">
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <label for="exampleInputPassword1">Password</label>
+              <input class="form-control" id="exampleInputPassword1" type="password" placeholder="Password" [(ngModel)]="citizen.password" name="password">
+            </div>
+            <div class="col-md-6">
+              <label for="exampleConfirmPassword">Confirm password</label>
+              <input class="form-control" id="exampleConfirmPassword" type="password" placeholder="Confirm password" [(ngModel)]="citizen.password_confirmation" name="password_confirmation" >
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-primary btn-block" (click)="doSignup()">Register</a>
+      </form>
+      <div class="text-center">
+        <a class="d-block small mt-3" (click)="openlogin()" style="color:#0080ff">Login Page</a>
+        <a class="d-block small mt-3" (click)="openCommercial()" style="color:#0080ff">Register as Commercial</a>
+        <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</header>
+
+
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-10 mx-auto">
+  <ul class="list-inline text-center">
+    <li class="list-inline-item">
+      <a href="#">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="#">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a href="#">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+    </li>
+  </ul>
+  <p class="copyright text-muted">Copyright GokulSharma &copy; Your Website 2017</p>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
