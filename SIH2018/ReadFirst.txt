@@ -1,0 +1,7 @@
+The Project was developed for a Govt organized competition "Smart India Hackathon 2018".
+The current web version is the front end section having multiple access controls.
+
+The admin panel as of now doesnt have any authentication but routes to next page and shows all the "challan data"(as the motive of project).Also it shows a heatmap under the Analysis section of it.
+
+the user login on the other hand takes in login validation from locally stored json files(sample username:9599537687 password:gokul)
+and further routes to particular user and their challans fetched from again locally stored jsons.You can try other login action and their details by reading the login.json in the assets folder inside src .
