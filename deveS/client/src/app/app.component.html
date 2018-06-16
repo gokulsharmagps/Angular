@@ -1,0 +1,144 @@
+
+<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" name="navbarSupportedContent">
+ -->
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left:450px;">
+
+<ul class="nav nav-tabs" >
+  <li class="nav-item">
+    <a class="nav-link active" href="#intro" (click)="showintro()">Introduction</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#personal">Personal Info</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#show" (click)="showall()">Show all</a>
+  </li>
+</ul>
+
+
+
+</nav>
+
+<div class="progress" style="height: 3px;">
+  <div class="progress-bar" role="progressbar" style="width: 33.33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+
+<div class="container" style="padding-left:350px; margin-top:50px;">
+  <form *ngIf="introtab">
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="Name">Your Name</label>
+      <input type="text" class="form-control" placeholder="Name" required [(ngModel)]="user.name" name="name">
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="description">Write a short Description About Yourself</label>
+    <textarea class="form-control" aria-label="With textarea" style="height:200px;" required [(ngModel)]="user.about" name="des"></textarea>
+    <button type="button" class="btn btn-success" style="margin-top:20px; margin-left:150px;"(click)="showpersonaltab()">Proceed</button>
+  </div>
+</div>
+</form>
+</div>
+
+<div class="container" style="padding-left:150px; margin-top:50px;">
+<div *ngIf="personaltab">
+  <form>
+    <div class="form-group">
+      <label for="State">State</label>
+      <input type="text" class="form-control" [(ngModel)]="user.state" name="state" placeholder="">
+    </div>
+    <hr>
+    <div class="form-group">
+      <label for="Age">Age</label>
+      <input type="number" class="form-control" [(ngModel)]="user.age" name="Age" placeholder="">
+    </div>
+    <hr>
+    <label for="Ethniciy">Ethnicity</label><br>
+    <div class="form-check form-check-inline">
+
+      <input class="form-check-input" type="radio" [(ngModel)]="user.eth" name="Ethniciy" value="Hispanic or Latin">
+      <label class="form-check-label" for="inlineRadiobox1">Hispanic or Latin</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.eth" name="Ethniciy" value="Non Hispanic or Non Latin">
+      <label class="form-check-label" for="inlineRadiobox2">Non Hispanic or Non Latin</label>
+    </div>
+    <hr>
+    <label for="Race">Race</label><br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.race" name="race" value="American Indian">
+      <label class="form-check-label" for="inlineRadiobox1">American Indian</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.race" name="race" value="Asian">
+      <label class="form-check-label" for="inlineRadiobox2">Asian</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.race" name="race" value="Native Hawain or other Pacific islander">
+      <label class="form-check-label" for="inlineRadiobox1">Native Hawain or other Pacific islander</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.race" name="race" value="Black or African American">
+      <label class="form-check-label" for="inlineRadiobox2">Black or African American</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.race" name="race" value="White">
+      <label class="form-check-label" for="inlineRadiobox2">White</label>
+    </div>
+    <hr>
+    <label for="Sex">Sex</label><br>
+    <div class="form-check form-check-inline">
+
+      <input class="form-check-input" type="radio" [(ngModel)]="user.sex" name="sex" value="Male">
+      <label class="form-check-label" for="inlineRadiobox1">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" [(ngModel)]="user.sex" name="sex" value="Female">
+      <label class="form-check-label" for="inlineRadiobox2">Female</label>
+    </div>
+    <hr>
+    <div class="form-group">
+      <label for="Height">Height</label>
+      <input type="number" class="form-control" [(ngModel)]="user.height" name="height" placeholder="in inches">
+    </div>
+    <hr>
+    <div class="form-group">
+      <label for="Weight">Weight</label>
+      <input type="number" class="form-control" [(ngModel)]="user.weight" name="weight" placeholder="in pounds">
+    </div>
+
+    <button  type="button" class="btn btn-success" style="margin-top:20px; margin-left:150px;"(click)="showall()">Proceed</button>
+
+
+  </form>
+
+
+</div>
+
+
+<div *ngIf="showalltab">
+  <div *ngFor="let user of users">
+  <p>{{user.name}} {{user.about}}</p><br>
+  <p>{{user.state}} {{user.age}}</p><br>
+  <p>{{user.eth}} {{user.race}}</p><br>
+  <p>{{user.sex}} {{user.height}} {{user.weight}}</p><hr>
+</div>
+</div>
+
+
+
+</div>
