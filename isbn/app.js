@@ -10,7 +10,7 @@ const productRoutes = require("./api/routes/products");
 mongoose.connect(
   "mongodb://admin:" +
     process.env.MONGO_ATLAS_PW +
-    "@ds115124.mlab.com:15124/isbn-products",
+    "@ds131551.mlab.com:31551/isbn-books",
   {
     useMongoClient: true
   }
