@@ -1,0 +1,34 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-custom">
+      <a class="navbar-brand" href="#"  style="color: black;" >ISBN Search</a>
+  </nav>
+
+
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="FindBook">Find a Book :</label>
+        <input type="text" class="form-control" id="inputquery" name="querying" [(ngModel)]="query" placeholder="Enter ISBN,Title">
+      </div>
+
+      <div class="form-group col-md-6">
+        <br>
+        <button type="submit" class="btn btn-primary button-custom"  (click)="search()">Search</button>
+      </div>
+    </div>
+  </form>
+
+  <router-outlet></router-outlet>
+
+
+  <div class="footer">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="copyright text-muted">Copyright GokulSharma &copy; Your Website 2017
+        Copyright © 2008-2018 <a href="https://isbnsearch.org/">ISBNsearch.org</a></p>
+        <p class="copyright text-muted">This website is an independent service and is not affiliated with The International ISBN Agency Limited or any other national ISBN registration agency.</p>
+
+      </div>
+    </div>
+  </div>
+  </div>

@@ -1,0 +1,24 @@
+<div *ngIf=products>
+  <h3>Search Results</h3>
+  <hr class="style">
+  <div *ngFor="let product of products">
+
+<div class="row">
+  <div class="col-md-6">
+    <h5>Title: {{product.title}}</h5>
+    <p><b>ISBN-13:  </b>{{product.isbn13}}</p>
+    <p><b>Date:  </b>{{castDate(product.createdOn)| date:'MMM d, y,  h:mma'}}</p>
+</div>
+<div class="col-md-6">
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" [src]="castUrl(product.path)">
+    </iframe>
+</div>
+
+</div>
+<hr style="height:20px;">
+</div>
+
+<div *ngIf=empty>
+  <h6>Nothing Found!!</h6>
+
+  </div>

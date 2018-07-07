@@ -1,0 +1,30 @@
+
+.container{
+  margin-top: 50px;
+}
+
+.button-custom{
+  margin-top: 8px;
+  width: 100px;
+}
+.form-row{
+  margin-left:150px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .container{
+    margin-top: 20px;
+  }
+
+  .button-custom{
+    margin-top: -30px;
+    width: 150px;
+    margin-left: 85px;
+  }
+  .form-row{
+    margin-left: auto;
+    margin-top: 12px;
+  }
+
+ }
