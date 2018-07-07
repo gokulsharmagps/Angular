@@ -25,6 +25,27 @@ margin-left:400px;
   margin-left:150px;
   margin-top: 20px;
 }
+.search-drop-down {
+    position: absolute;
+    width: 38%;
+    margin-top: -30px;
+    margin-left: 5px;
+    max-height: inherit;
+    overflow-y: auto;
+    z-index: 10;
+    background-color: #F6F6F6;
+    font-family: sans-serif;
+    opacity: 0.98;
+}
+
+.search-results {
+    padding: 10px;
+}
+
+.search-results:hover {
+    background: #707070;
+    cursor: pointer;
+}
 
 @media (max-width: 768px) {
   .container{
@@ -45,6 +66,17 @@ margin-left:400px;
   .form-row{
     margin-left: auto;
     margin-top: 12px;
+  }
+  .search-drop-down {
+      position: absolute;
+      width: 90%;
+      margin-top: -80px;
+      max-height: inherit;
+      overflow-y: auto;
+      z-index: 10;
+      background-color: #F6F6F6;
+      font-family: sans-serif;
+      opacity: 0.98;
   }
 
  }

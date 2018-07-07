@@ -16,7 +16,8 @@ export class AppComponent {
   private stringQuery:any;
   private Numberquery:any;
   products:Product[];
-
+  suggestion:any;
+  private showDropDown=false;
 constructor(private router:Router,private productService:ProductService){
 
 }
@@ -25,7 +26,9 @@ ngOnInit(){
 
   }
 
-search(){
+search(passedQuery){
+  this.showDropDown=false;
+  this.query=passedQuery;
   this.stringQuery=this.query;
   this.Numberquery=parseInt(this.query);
   this.router.navigate(['/home']);
@@ -43,6 +46,35 @@ search(){
   //console.log(this.query);
 }
 
+Findsuggestion(){
+  if(this.query.length>0){
+  this.stringQuery=this.query;
+  this.Numberquery=parseInt(this.query);
+        if(isNaN(this.Numberquery)){
+          this.productService.getProduct(this.stringQuery).subscribe(response => {
+            this.suggestion = response;
+            console.log(this.suggestion);
+                  if(this.suggestion.length==0){
+                      this.showDropDown=false;
+                    }
+                    else{
+                      this.showDropDown=true;
+                    }
+                  }, error => {
+                    console.log(error);
+                  });
+
+
+              }
+              else{
+                this.showDropDown=false;
+              }
+        }
+
+        else{
+          this.showDropDown=false;
+        }
+}
 
 
 passQuery(){
@@ -53,5 +85,8 @@ passProduct(){
   return this.products
 }
 
+closeDropDown(){
+  this.showDropDown=false;
+}
 
 }

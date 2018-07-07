@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" (click)="closeDropDown()">
   <nav class="navbar navbar-expand-lg navbar-custom">
       <a class="navbar-brand" href="#"  style="color: black;" >ISBN Search</a>
   </nav>
@@ -8,15 +8,28 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="FindBook">Find a Book :</label>
-        <input type="text" class="form-control" id="inputquery" name="querying" [(ngModel)]="query" placeholder="Enter ISBN,Title">
+        <input type="text" class="form-control" id="inputquery" name="querying" (input)="Findsuggestion()" [(ngModel)]="query" placeholder="Enter ISBN,Title">
+
       </div>
+
 
       <div class="form-group col-md-6">
         <br>
-        <button type="submit" class="btn btn-primary button-custom"  (click)="search()">Search</button>
+        <button type="submit" class="btn btn-primary button-custom"  (click)="search(query)">Search</button>
       </div>
     </div>
+    <div class="form-row">
+    <div *ngIf='showDropDown' class='form-group col-md-6 search-drop-down '>
+        <div class='search-results' *ngFor="let suggest of suggestion">
+            <p (click)="search(suggest.title)">
+                   {{suggest.title}}
+            </p>
+        </div>
+    </div>
+  </div>
   </form>
+
+
 
   <router-outlet></router-outlet>
 

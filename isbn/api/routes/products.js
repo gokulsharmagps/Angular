@@ -7,7 +7,7 @@ mongoose.plugin(require('mongoose-regex-search'));
 
 router.get("/", (req, res, next) => {
   Product.find()
-    .select("title isbn13 path id createdOn")
+    .select("title isbn13 id path createdOn")
     .exec()
     .then(docs => {
       // const response = {

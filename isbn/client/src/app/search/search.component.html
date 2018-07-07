@@ -11,8 +11,9 @@
     <p><b>Date:  </b>{{castDate(product.createdOn)| date:'MMM d, y,  h:mma'}}</p>
 </div>
 <div class="col-md-6">
-<iframe style="width:100px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" [src]="castUrl(product.path)">
+<iframe class="frame" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" [src]="castUrl(product.path)">
     </iframe>
+    <!-- <p>{{castUrl(product.path)}}</p> -->
 </div>
 
 </div>
